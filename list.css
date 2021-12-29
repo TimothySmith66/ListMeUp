@@ -1,0 +1,13 @@
+#btn{
+    background-color: aquamarine;
+}
+#newListItem{
+    width: 200px;
+    height: 100px;
+    
+}
+output{
+    border: 1px solid black;
+    width: 200px;
+    height: 100px;
+}
