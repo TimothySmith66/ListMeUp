@@ -10,7 +10,7 @@ deleteBtn.addEventListener("click", deleteElement);
 
 function addElement() {
   outputArray.push(listItem.value);
-
+  // outputList.innerHTML = "";
   for (i = 0; i < outputArray.length; i++) {
     var p = document.createElement("p");
     const outputElement = document.createTextNode(outputArray[i]);

@@ -15,4 +15,5 @@ output{
 .item{ 
     background-color: rebeccapurple;
     border: 2px dashed red ;
+    color: aquamarine;
 }
