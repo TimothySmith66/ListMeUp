@@ -11,3 +11,8 @@ output{
     width: 200px;
     height: 100px;
 }
+
+.item{ 
+    background-color: rebeccapurple;
+    border: 2px dashed red ;
+}

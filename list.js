@@ -10,8 +10,17 @@ deleteBtn.addEventListener("click", deleteElement);
 
 function addElement() {
   outputArray.push(listItem.value);
-  outputArray;
-  outputList.innerHTML = outputArray.join("");
+
+  for (i = 0; i < outputArray.length; i++) {
+    var p = document.createElement("p");
+    const outputElement = document.createTextNode(outputArray[i]);
+    console.log(outputArray[i]);
+    p.appendChild(outputElement);
+    p.setAttribute("class", "item");
+    console.log("loop is running");
+    outputList.appendChild(p);
+  }
+
   listItem.value = "";
 }
 
