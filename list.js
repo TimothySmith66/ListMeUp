@@ -6,25 +6,46 @@ var listItem = document.getElementById("newListItem");
 var outputArray = [];
 
 addBtn.addEventListener("click", addElement);
-deleteBtn.addEventListener("click", deleteElement);
-
-function addElement() {
-  outputArray.push(listItem.value);
-  outputList.innerHTML = "";
+deleteLastBtn.addEventListener("click", deleteLast);
+function loopi() {
   for (i = 0; i < outputArray.length; i++) {
     var p = document.createElement("p");
-    const outputElement = document.createTextNode(outputArray[i]);
-    console.log(outputArray[i]);
+    const outputElement = document.createElement("button");
+    outputElement.innerHTML = outputArray[i];
+    var deleteBtn = document.createElement("button");
+    deleteBtn.innerHTML = "x";
+    outputElement.appendChild(deleteBtn);
     p.appendChild(outputElement);
     p.setAttribute("class", "item");
-    console.log("loop is running");
+    deleteBtn.setAttribute("id", `delete${i}`);
+    deleteBtn.setAttribute("class", i);
+    deleteBtn.addEventListener("click", deleteCurrent);
     outputList.appendChild(p);
   }
 
   listItem.value = "";
 }
+function addElement() {
+  outputArray.push(listItem.value);
+  outputList.innerHTML = "";
+  loopi();
+}
 
-function deleteElement() {
+function deleteLast() {
   outputArray.pop(listItem.value);
   outputList.innerHTML = outputArray;
+}
+
+function deleteCurrent() {
+  // deleteBtn.className var p = document.createElement("p");
+
+  outputList.innerHTML = "";
+  var who = this.id;
+
+  var yes = who.slice(6, 7);
+  console.log(yes);
+  // var who = document.getElementsByClassName(`delete ${i}`);
+  outputArray.splice(yes, 1);
+  console.log(outputArray);
+  loopi();
 }

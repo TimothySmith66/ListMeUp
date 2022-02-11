@@ -14,6 +14,12 @@ output{
 
 .item{ 
     
-    border: 2px solid red ;
     color: black;
+}
+.delete {
+    border: black;
+    color: blue
+}
+1{
+
 }
