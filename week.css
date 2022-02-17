@@ -1,0 +1,25 @@
+#firstDay{
+    /* margin-left: 20px; */
+ 
+    border-right: 1px solid;
+    }
+    .column{
+    float: left;
+    margin-right: 50;
+    /* margin-left: 20px; */
+    /* float: inline-start; */
+    border: 1px solid;
+    font-size: 20px;
+    padding: 100px;
+    border-right: none;
+    max-width: 100%;
+   /* column-width: 70px; */
+   height: 100%;
+    margin-bottom: 1px solid;
+   
+}
+.ugh{
+max-width: 70px;
+font-size: 30px;
+}
+

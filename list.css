@@ -1,3 +1,8 @@
+html,body{
+    height: 100%;
+    background-color: gray;
+    background: linear-gradient(to bottom right, rgb(94, 92, 92) , rgb(73, 70, 70) ,#141212 );    
+}
 .btn{
     background-color: aquamarine;
 }
@@ -20,6 +25,7 @@ output{
     border: black;
     color: blue
 }
-1{
-
+button{
+    background-color: rgb(66, 109, 167);
+    color: rgb(189, 184, 184);
 }

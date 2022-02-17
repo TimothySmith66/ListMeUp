@@ -1,46 +1,54 @@
 // Lets see what I can do:
 var listItem = document.getElementById("newListItem");
 const dbName = "ListArray";
-var request = window.indexedDB.open(dbName);
-// console.log(request);
-var db;
-// var btn = document.getElementById("btn");
-// var deleteBtn = document.getElementById("deleteBtn");
-request.onerror = function (event) {
-  console.log("not good");
-};
-
 var outputArray = [];
-var customerData = outputArray;
-const listArray = [
-  { ssn: "444-44-4444", name: "Bill", age: 35, email: "bill@company.com" },
-  { ssn: "555-55-5555", name: "Donna", age: 32, email: "donna@home.org" },
-];
+function firstTry() {
+  var request = window.indexedDB.open(dbName);
+  // console.log(request);
+  var db;
+  // var btn = document.getElementById("btn");
 
-request.onupgradeneeded = function (event) {
-  db = event.target.result;
+  request.onerror = function (event) {
+    console.log("not good");
+  };
 
-  const listArray = [
+  // var customerData = customerData.assign({}, outputArray);
+  const listArray = customerData;
+  console.log(customerData);
+  var customerData = [
     { ssn: "444-44-4444", name: "Bill", age: 35, email: "bill@company.com" },
     { ssn: "555-55-5555", name: "Donna", age: 32, email: "donna@home.org" },
   ];
-  var objectStore = db.createObjectStore("listArray", {
-    keyPath: `ssn`,
-  });
-
-  // var transaction = event.target.transaction;
-  // console.log(listArray);
-  objectStore.transaction.oncomplete = function (event) {
-    console.log(event);
-    var listItemObjectStore = db
-      .transaction("listArray", "readwrite")
-      .objectStore("listArray");
-    listArray.forEach(function (listItem) {
-      listItemObjectStore.add(listItem);
+  request.onupgradeneeded = function (event) {
+    db = event.target.result;
+    const listArray = customerData;
+    // = [
+    //   { ssn: "444-44-4444", name: "Bill", age: 35, email: "bill@company.com" },
+    //   { ssn: "555-55-5555", name: "Donna", age: 32, email: "donna@home.org" },
+    // ];
+    var objectStore = db.createObjectStore("listArray", {
+      keyPath: `ssn`,
     });
-    var transaction = db.transaction(["listArray"], "readwrite");
+
+    // var transaction = event.target.transaction;
+    // console.log(listArray);
+    objectStore.transaction.oncomplete = function (event) {
+      console.log(event);
+      var listItemObjectStore = db
+        .transaction("listArray", "readwrite")
+        .objectStore("listArray");
+      listArray.forEach(function (listItem) {
+        listItemObjectStore.add(listItem);
+      });
+      var transaction = db.transaction(["listArray"], "readwrite");
+    };
   };
-};
+}
+listItem.addEventListener("keyup", function (event) {
+  if (event.keyCode === 13) {
+    addElement();
+  }
+});
 addBtn.addEventListener("click", addElement);
 function loopi() {
   for (i = 0; i < outputArray.length; i++) {
@@ -63,6 +71,7 @@ function addElement() {
   outputArray.push(listItem.value);
   outputList.innerHTML = "";
   loopi();
+  firstTry();
 }
 
 function deleteCurrent() {
