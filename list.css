@@ -3,9 +3,15 @@ html,body{
     background-color: gray;
     background: linear-gradient(to bottom right, rgb(94, 92, 92) , rgb(73, 70, 70) ,#141212 );    
 }
-.btn{
-    background-color: aquamarine;
+button{
+   border-radius: 50px;
+   font-size: larger;
 }
+.btn{
+    background-color: rgb(5, 148, 52);
+
+}
+
 #newListItem{
     width: 200px;
     height: 100px;
@@ -23,9 +29,9 @@ output{
 }
 .delete {
     border: black;
-    color: blue
+    color: rgb(29, 29, 185)
 }
 button{
-    background-color: rgb(66, 109, 167);
-    color: rgb(189, 184, 184);
+    background-color: rgb(17, 108, 226);
+    color: rgb(252, 250, 250);
 }
