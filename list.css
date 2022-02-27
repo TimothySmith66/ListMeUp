@@ -7,14 +7,17 @@ button{
    border-radius: 50px;
    font-size: larger;
 }
-.btn{
+.AddButton{
     background-color: rgb(5, 148, 52);
 
 }
 
 #newListItem{
-    width: 200px;
-    height: 100px;
+    
+
+    margin-left: 30%;
+    margin-right: 40%;
+    text-align: center;
     
 }
 output{
@@ -31,7 +34,7 @@ output{
     border: black;
     color: rgb(29, 29, 185)
 }
-button{
+#listItem{
     background-color: rgb(17, 108, 226);
-    color: rgb(252, 250, 250);
+  
 }
