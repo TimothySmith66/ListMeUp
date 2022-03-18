@@ -3,15 +3,19 @@ html,body{
     background-color: gray;
     background: linear-gradient(to bottom right, rgb(94, 92, 92) , rgb(73, 70, 70) ,#141212 );    
 }
-button{
-   border-radius: 50px;
-   font-size: larger;
-}
 .AddButton{
     background-color: rgb(5, 148, 52);
 
 }
-
+button{
+   border-radius: 50px;
+   font-size: larger;
+}
+.gridDiv{
+   display: grid; 
+   grid-template-columns: repeat(3,1fr);
+   grid-gap: 1em;
+}
 #newListItem{
     
 

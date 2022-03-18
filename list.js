@@ -1,14 +1,21 @@
-// Lets see what I can do:x
-var gridDiv = document.createElement("div");
+// Lets see what I can do:
 
+// gridDiv keeps nested elements from rendering after list output
+var gridDiv = document.createElement("div");
 gridDiv.setAttribute("class", "grid");
 document.body.appendChild(gridDiv);
+
 /* <input type="text" id="newListItem" name="newListItem"></input>; */
 var listItem = document.createElement("INPUT");
 listItem.setAttribute("type", "text");
 listItem.setAttribute("id", "newListItem");
 gridDiv.appendChild(listItem);
 
+/* <input type="text" id="listName" name="listName"></input>; */
+var listName = document.createElement("INPUT");
+listName.setAttribute("type", "text");
+listName.setAttribute("id", "newlistName");
+gridDiv.appendChild(listName);
 /* <button class="btn" id="addBtn">submit</button> */
 
 var AddButton = document.createElement("button");
@@ -34,6 +41,16 @@ listItem.addEventListener("keyup", function (event) {
 });
 // when the button is pressed
 AddButton.addEventListener("click", addElement);
+
+class List {
+  constructor(name, array) {
+    this._name = name;
+    this.outputArray = array;
+  }
+}
+function something() {
+  var ListObject = new List(listName, outputArray);
+}
 // appends all array items to page
 function loopi() {
   for (i = 0; i < outputArray.length; i++) {
@@ -41,6 +58,7 @@ function loopi() {
     const outputElement = document.createElement("button");
     outputElement.setAttribute("id", "ListItem");
 
+    console.log(listName.value);
     p.setAttribute("class", "item");
     outputElement.innerHTML = outputArray[i];
     var deleteBtn = document.createElement("button");
@@ -63,10 +81,11 @@ function addElement() {
   } else {
     outputArray.push(listItem.value);
     outputList.innerHTML = "";
+    listName.innerHTML = "";
     loopi();
+    something();
   }
   // firstTry();
-  update();
 }
 
 function deleteCurrent() {
