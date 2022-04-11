@@ -1,3 +1,3 @@
-if (getDay() == 1) {
-  tuesday;
-}
+// if (getDay() == 1) {
+//   tuesday;
+// }
