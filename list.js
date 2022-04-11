@@ -33,9 +33,9 @@ gridDiv.appendChild(outputList);
 
 var outputArray = [];
 
-var array1 = { _ListName: ListName, _array: [] };
+var array1 = { _ListName: "1", _array: [] };
 
-var array2 = { _ListName: ListName, _array: [] };
+var array2 = { _ListName: "2", _array: [] };
 var array3 = { _ListName: "l3", _array: [] };
 var array4 = { _ListName: "l4", _array4: [] };
 var array5 = { _ListName: "l5", _array5: [] };
@@ -127,6 +127,7 @@ function loopInterface() {
       t.appendChild(p);
       column.appendChild(t);
       listItem.value = "";
+      console.log(array1, array2);
     }
   }
 }
@@ -134,7 +135,8 @@ function loopInterface() {
 function addElement() {
   console.log(listName.value);
 
-  if (listName.value == array1._ListName) {
+  if (listName.value == array1._ListName || array1._ListName == "1") {
+    array1._ListName = listName.value;
     array1._array.push(listItem.value);
     console.log(listItem.value);
     outputList.innerHTML = "";
@@ -142,8 +144,8 @@ function addElement() {
     loopInterface(array1._ListName);
     console.log("1");
     console.log(array1._ListName);
-  } else if (listName.value == array2._ListName) {
-    array2._array2.push(listItem.value);
+  } else if (listName.value == array2._ListName || array2._ListName == "2") {
+    array2._array.push(listItem.value);
     loopInterface();
     console.log("2");
   } else {
