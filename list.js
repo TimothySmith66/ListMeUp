@@ -1,21 +1,17 @@
 // Lets see what I can do:
 const array = "array";
-// gridDiv keeps nested elements from rendering after list output
-var gridDiv = document.createElement("div");
-gridDiv.setAttribute("class", "grid");
-document.body.appendChild(gridDiv);
 
 /* <input type="text" id="listName" name="listName"></input>; */
 var listName = document.createElement("INPUT");
 listName.setAttribute("type", "text");
 listName.setAttribute("id", "newListName");
-gridDiv.appendChild(listName);
+document.body.appendChild(listName);
 var ListName = listName.value;
 /* <input type="text" id="newListItem" name="newListItem"></input>; */
 var listItem = document.createElement("INPUT");
 listItem.setAttribute("type", "text");
 listItem.setAttribute("id", "newListItem");
-gridDiv.appendChild(listItem);
+document.body.appendChild(listItem);
 
 /* <button class="btn" id="addBtn">submit</button> */
 
@@ -23,13 +19,17 @@ var AddButton = document.createElement("button");
 
 AddButton.setAttribute("id", "btn");
 AddButton.innerHTML = "submit";
-gridDiv.appendChild(AddButton);
+document.body.appendChild(AddButton);
 
+// gridDiv keeps nested elements from rendering after list output
+var gridDiv = document.createElement("div");
+gridDiv.setAttribute("class", "grid");
+document.body.appendChild(gridDiv);
 /* <output output ></output>; */
-var outputList = document.createElement("OUTPUT");
-// listItem.setAttribute("type", "text");
-listItem.setAttribute("id", "outputList");
-gridDiv.appendChild(outputList);
+// var outputList = document.createElement("OUTPUT");
+// // listItem.setAttribute("type", "text");
+// listItem.setAttribute("id", "outputList");
+// gridDiv.appendChild(outputList);
 
 var outputArray = [];
 
@@ -54,15 +54,15 @@ listItem.addEventListener("keyup", function (event) {
 AddButton.addEventListener("click", addElement);
 
 function loopInterface() {
-  for (j = 1; j < 2; j++) {
+  gridDiv.innerHTML = "";
+  for (j = 1; j < 8; j++) {
     var column = document.createElement("div");
     column.setAttribute("class", `column${j}`);
-    document.body.appendChild(column);
-    console.log(array1);
+    gridDiv.appendChild(column);
     let arrayJ = eval(`array${j}`);
     console.log(arrayJ);
     var t = document.createElement("h4");
-    outputList.appendChild(column);
+    gridDiv.appendChild(column);
     t.innerHTML = listName.value;
     for (i = 0; i < arrayJ._array.length; i++) {
       var p = document.createElement("p");
