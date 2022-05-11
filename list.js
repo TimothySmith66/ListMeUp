@@ -31,8 +31,6 @@ document.body.appendChild(gridDiv);
 // listItem.setAttribute("id", "outputList");
 // gridDiv.appendChild(outputList);
 
-var outputArray = [];
-
 var array1 = { _ListName: "1", _array: [] };
 
 var array2 = { _ListName: "2", _array: [] };
@@ -80,6 +78,7 @@ function loopInterface() {
       li.appendChild(outputElement);
       li.setAttribute("class", "item");
       deleteBtn.setAttribute("id", `delete${i}`);
+      deleteBtn.setAttribute("class", `array${j}`);
       deleteBtn.addEventListener("click", deleteCurrent);
       ul.appendChild(li);
       t.appendChild(ul);
@@ -175,8 +174,10 @@ function addElement() {
 function deleteCurrent() {
   // deleteBtn.className var p = document.createElement("p");
 
+  let deleteColumn = Function("return " + this.className)();
   //.innerHTML = "";
   var selected = this.id.slice(6, 7);
-  outputArray.splice(selected, 1);
+  console.log(selected);
+  deleteColumn._array.splice(selected, 1);
   loopInterface();
 }

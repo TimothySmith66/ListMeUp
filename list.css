@@ -9,10 +9,10 @@ html,body{
    border-radius: 50px;
    font-size: larger;
 }.gridDiv{
+    height: 100%;
    display: grid; 
    grid-template-columns: repeat(3,1fr);
    grid-gap: 1em;
-   height: 100%;
 }.item{ 
     
     color: black;
@@ -23,8 +23,8 @@ html,body{
     background-color: rgb(17, 108, 226);
   
 }column{
-    border-radius: 30px;
     height: 100px;
+    border-radius: 30px;
 }.column1{width: 25%;
     background: green;
     float: left;
