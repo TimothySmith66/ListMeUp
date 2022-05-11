@@ -2,71 +2,51 @@ html,body{
     height: 100%;
     background-color: gray;
     background: linear-gradient(to bottom right, rgb(94, 92, 92) , rgb(73, 70, 70) ,#141212 );    
-}
-.AddButton{
+}.AddButton{
     background-color: rgb(5, 148, 52);
     float: left;
-}
-button{
+}button{
    border-radius: 50px;
    font-size: larger;
-}
-.gridDiv{
+}.gridDiv{
    display: grid; 
    grid-template-columns: repeat(3,1fr);
    grid-gap: 1em;
-}
-#newListItem{
-    
-
-    
-    text-align: center;
-    
-}
-output{
-    border: 1px solid black;
-    width: 200px;
-    height: 100px;
-}
-
-.item{ 
+   height: 100%;
+}.item{ 
     
     color: black;
-}
-.delete {
+}.delete {
     border: black;
     color: rgb(29, 29, 185)
-}
-#listItem{
+}#listItem{
     background-color: rgb(17, 108, 226);
   
-}
-
-.column1 {width: 25%;
+}column{
+    border-radius: 30px;
+    height: 100px;
+}.column1{width: 25%;
     background: green;
     float: left;
-
-}
-.column2 {
+    height: 100%; 
+}.column2{
     width: 25%;
     background: red;
     float: left;
 
-}
-.column3 {
+
+}.column3 {
     width: 25%;
     background: blue;
     float: left;
 
     
-}
-.column4 {
+}.column4 {
     width: 25%;
     background: purple;
     float: left;
 
-}
-.column5 {
+}.column5 {
     width: 25%;
     background: orange;
     float: left;
@@ -80,5 +60,13 @@ output{
     width: 25%;
     background: indigo;
     float: left;
+
+}ul {
+    list-style-type: none;
+    padding-left: 0; 
+    margin: 0;
+}
+.listedName {
+    padding-left:40px;
 
 }

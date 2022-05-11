@@ -1,3 +1,5 @@
+import { array1, array2, array3, array4, array5, array6, array7 } from "./list";
+
 const dbName = "ListArray";
 var request = window.indexedDB.open(dbName);
 // console.log(request);

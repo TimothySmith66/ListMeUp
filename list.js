@@ -55,33 +55,34 @@ AddButton.addEventListener("click", addElement);
 
 function loopInterface() {
   gridDiv.innerHTML = "";
-  for (j = 1; j < 8; j++) {
-    var column = document.createElement("div");
+  for (j = 1; j < A; j++) {
+    var column = document.createElement("column");
     column.setAttribute("class", `column${j}`);
     gridDiv.appendChild(column);
     let arrayJ = eval(`array${j}`);
     console.log(arrayJ);
-    var t = document.createElement("h4");
+    var t = document.createElement("h3");
+    t.setAttribute("class", "listedName");
     gridDiv.appendChild(column);
-    t.innerHTML = listName.value;
+    t.innerHTML = arrayJ._ListName;
     for (i = 0; i < arrayJ._array.length; i++) {
-      var p = document.createElement("p");
+      var li = document.createElement("li");
       console.log(column);
       const outputElement = document.createElement("button");
       outputElement.setAttribute("id", "ListItem");
-
-      p.setAttribute("class", "item");
+      var ul = document.createElement("ul");
+      li.setAttribute("class", "item");
       console.log(eval(`array${j}`));
-      outputElement.innerHTML = eval(`array${j}`)._array;
+      outputElement.innerHTML = eval(`array${j}`)._array[i];
       var deleteBtn = document.createElement("button");
       deleteBtn.innerHTML = "x";
       outputElement.appendChild(deleteBtn);
-      p.appendChild(outputElement);
-      p.setAttribute("class", "item");
+      li.appendChild(outputElement);
+      li.setAttribute("class", "item");
       deleteBtn.setAttribute("id", `delete${i}`);
       deleteBtn.addEventListener("click", deleteCurrent);
-      // var columnJ = document.getElementsByClassName(`column${j}`);
-      t.appendChild(p);
+      ul.appendChild(li);
+      t.appendChild(ul);
       column.appendChild(t);
       listItem.value = "";
       console.log(array1, array2, array3, array4, array5, array6, array7);
@@ -106,11 +107,11 @@ function addElement() {
     window[ArrayA]._array.push(listItem.value);
     A++;
     loopInterface();
-    console.log("1");
+    console.log(A);
   } else if (listName.value == array1._ListName) {
     array1._array.push(listItem.value);
     console.log(listItem.value);
-    outputList.innerHTML = "";
+
     listName.innerHTML = "";
     loopInterface();
     console.log("2");
@@ -118,42 +119,42 @@ function addElement() {
   } else if (listName.value == array2._ListName) {
     array2._array.push(listItem.value);
     console.log(listItem.value);
-    outputList.innerHTML = "";
+
     listName.innerHTML = "";
     loopInterface();
     console.log("3");
   } else if (listName.value == array3._ListName) {
     array3._array.push(listItem.value);
     console.log(listItem.value);
-    outputList.innerHTML = "";
+
     listName.innerHTML = "";
     loopInterface();
     console.log("3");
   } else if (listName.value == array4._ListName) {
     array4._array.push(listItem.value);
     console.log(listItem.value);
-    outputList.innerHTML = "";
+
     listName.innerHTML = "";
     loopInterface();
     console.log("3");
   } else if (listName.value == array5._ListName) {
     array5._array.push(listItem.value);
     console.log(listItem.value);
-    outputList.innerHTML = "";
+
     listName.innerHTML = "";
     loopInterface();
     console.log("3");
   } else if (listName.value == array6._ListName) {
     array6._array.push(listItem.value);
     console.log(listItem.value);
-    outputList.innerHTML = "";
+
     listName.innerHTML = "";
     loopInterface();
     console.log("3");
   } else if (listName.value == array7._ListName) {
     array7._array.push(listItem.value);
     console.log(listItem.value);
-    outputList.innerHTML = "";
+
     listName.innerHTML = "";
     loopInterface();
     console.log("3");
@@ -162,7 +163,7 @@ function addElement() {
 
     array1._array.push(listItem.value);
     console.log(listItem.value);
-    outputList.innerHTML = "";
+
     listName.innerHTML = "";
     loopInterface(array1._ListName);
     console.log("4");
@@ -174,7 +175,7 @@ function addElement() {
 function deleteCurrent() {
   // deleteBtn.className var p = document.createElement("p");
 
-  outputList.innerHTML = "";
+  //.innerHTML = "";
   var selected = this.id.slice(6, 7);
   outputArray.splice(selected, 1);
   loopInterface();
