@@ -70,7 +70,6 @@ function loopInterface() {
       outputElement.setAttribute("id", "ListItem");
       var ul = document.createElement("ul");
       li.setAttribute("class", "item");
-      console.log(eval(`array${j}`));
       outputElement.innerHTML = eval(`array${j}`)._array[i];
       var deleteBtn = document.createElement("button");
       deleteBtn.innerHTML = "x";
@@ -106,67 +105,48 @@ function addElement() {
     window[ArrayA]._array.push(listItem.value);
     A++;
     loopInterface();
-    console.log(A);
   } else if (listName.value == array1._ListName) {
     array1._array.push(listItem.value);
-    console.log(listItem.value);
 
     listName.innerHTML = "";
     loopInterface();
-    console.log("2");
-    console.log(array1._ListName);
   } else if (listName.value == array2._ListName) {
     array2._array.push(listItem.value);
-    console.log(listItem.value);
 
     listName.innerHTML = "";
     loopInterface();
-    console.log("3");
   } else if (listName.value == array3._ListName) {
     array3._array.push(listItem.value);
-    console.log(listItem.value);
 
     listName.innerHTML = "";
     loopInterface();
-    console.log("3");
   } else if (listName.value == array4._ListName) {
     array4._array.push(listItem.value);
-    console.log(listItem.value);
 
     listName.innerHTML = "";
     loopInterface();
-    console.log("3");
   } else if (listName.value == array5._ListName) {
     array5._array.push(listItem.value);
-    console.log(listItem.value);
 
     listName.innerHTML = "";
     loopInterface();
-    console.log("3");
   } else if (listName.value == array6._ListName) {
     array6._array.push(listItem.value);
-    console.log(listItem.value);
 
     listName.innerHTML = "";
     loopInterface();
-    console.log("3");
   } else if (listName.value == array7._ListName) {
     array7._array.push(listItem.value);
-    console.log(listItem.value);
 
     listName.innerHTML = "";
     loopInterface();
-    console.log("3");
   } else {
-    console.log("bitch");
+    console.log("else statement!");
 
     array1._array.push(listItem.value);
-    console.log(listItem.value);
 
     listName.innerHTML = "";
     loopInterface(array1._ListName);
-    console.log("4");
-    console.log(array1._ListName);
     // something();
   }
   // firstTry();
