@@ -1,6 +1,6 @@
 # ListEmUp
-Done: A very simple list maker that can delete items too. 
-In development currently: database, a good looking UI, days of the week list, multiple lists for various reasons.
+Done: Makes multiple lists with the names you give them, Can delete items too. 
+In development currently: database, a good looking UI, days of the week list.
 Future development ideas: Alarm, side goals and ideas, possible calendar, personal time management system/ thought organizer
 
 https://timothysmith66.github.io/ListMeUp/

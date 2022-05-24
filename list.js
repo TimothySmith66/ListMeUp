@@ -40,7 +40,6 @@ var array5 = { _ListName: "5", _array: [] };
 var array6 = { _ListName: "6", _array: [] };
 var array7 = { _ListName: "7", _array: [] };
 var A = 1;
-// function firstTry() {
 
 // when enter key is pressed in the text area
 listItem.addEventListener("keyup", function (event) {
@@ -50,7 +49,7 @@ listItem.addEventListener("keyup", function (event) {
 });
 // when the button is pressed
 AddButton.addEventListener("click", addElement);
-
+// Creation of DOM elements
 function loopInterface() {
   gridDiv.innerHTML = "";
   for (j = 1; j < A; j++) {
